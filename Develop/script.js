@@ -70,7 +70,6 @@ var hourList = [
     
 ]
 
-  
 hourList.forEach(function(thisHour) {
 
     var timeRow = $("<form>").attr({
@@ -86,14 +85,24 @@ hourList.forEach(function(thisHour) {
 
     var reminderArea = $("<div>")
     .attr({
-        "class": "col-md-9 description"
+        "class": "col-md-9"
     })
-
-    var textArea = $("<textarea>")
+    console.log(moment().format("HH"))
+        if (thisHour.time < moment().format("HH")) {
+            reminderArea.addClass("past")
+        }
+        else if (thisHour.time === moment().format("HH")) {
+            reminderArea.addClass("present")
+        }
+        else if (thisHour.time > moment().format("HH")){
+            reminderArea.addClass("future")
+        }
+        
+    var reminderText = $("<textarea>")
     .attr({
         "class": "col-md-12 reminder-text"
     })
-    reminderArea.append(textArea)
+    reminderArea.append(reminderText)
 
     var saveArea = $("<div>")
     .attr({

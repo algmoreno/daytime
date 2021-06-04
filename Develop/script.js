@@ -89,10 +89,29 @@ hourList.forEach(function(thisHour) {
         "class": "col-md-9 description"
     })
 
+    var textArea = $("<textarea>")
+    .attr({
+        "class": "col-md-12 reminder-text"
+    })
+    reminderArea.append(textArea)
+
     var saveArea = $("<div>")
     .attr({
-        "class": "col-md-2 "
+        "class": "col-md-2 saveArea"
     })
+
+    var saveButton = $("<button>")
+    .attr({
+        "class": "btn btn-outline-warning saveBtn"
+    })
+
+    var addSign = $("<span>")
+    .attr({
+        "class": "oi oi-plus"
+    })
+    
+    saveButton.append(addSign)
+    saveArea.append(saveButton)
         
 
     timeRow.append(hourEl, reminderArea, saveArea);

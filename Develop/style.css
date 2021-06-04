@@ -31,6 +31,8 @@ textarea{
 }
 
 .row {
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid grey;;
@@ -41,6 +43,10 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #b14e4e;
+}
+
+.reminder-text {
+  margin-top: 10px;
 }
 
 .past {
@@ -59,7 +65,7 @@ textarea{
   color: white;
 }
 
-.saveBtn {
+.saveArea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -67,7 +73,17 @@ textarea{
   color: white;
 }
 
-.saveBtn i:hover {
+.saveArea i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.saveBtn { 
+  width: 186px;
+  height: 76px;
+  border-radius: 0px;
+  margin-left: -14px;
+  margin-top: 1px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }

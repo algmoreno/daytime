@@ -12,3 +12,9 @@ When the user types something in the area and presses the save button,
 that information is saved to local storage. Was not able to display that 
 information when page refreshes and pull it from local storage. 
 
+Screenshots: 
+![alt text](./Develop/screen1.png) "Top half")
+![alt text](./Develop/screen2.png) "Bottom half")
+
+Repo Link: https://github.com/algmoreno/daytime
+Live Link: https://algmoreno.github.io/daytime/ 

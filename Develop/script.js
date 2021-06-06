@@ -104,7 +104,7 @@ $(document).ready(function () {
         var reminderText = $("<textarea>")
         .attr({
             "class": "col-md-12 reminder-text",
-            "id": `HELLO ${thisHour.time}`
+            "id": `${thisHour.time}`
         })
         reminderArea.append(reminderText)
     
@@ -118,30 +118,31 @@ $(document).ready(function () {
             "id": "saveBtn",
             "class": "btn btn-outline-warning saveBtn"
         })
+        .on("click", function(event){
+            event.preventDefault();
+            var setValue = $(this).parent().siblings().children(".reminder-text").val();
+            var setTime = $(this).parent().siblings().children(".reminder-text").attr("id");
+            localStorage.setItem(setValue, setTime); 
+
+            displayReminder(); 
+        })
 
         var addSign = $("<span>")
         .attr({
             "class": "oi oi-plus"
         })
 
-        $("#saveBtn").on("click", function(event){
-            event.preventDefault()
-            var setValue = $(this).parent().siblings().children(".reminder-text").val();
-            console.log(setValue);
-            var setTime = $(this).parent().siblings().children(".reminder-text").attr("id");
-            console.log(setTime);
-            localStorage.setItem(setValue, setTime); 
-        })
-        
-        
         saveButton.append(addSign)
         saveArea.append(saveButton)
             
     
         timeRow.append(hourEl, reminderArea, saveArea);
-        $("#hour .reminder-text").val(localStorage.getItem("hour"))
+        
     })
 
+    // displayReminder = function() {
+    // localStorage.getItem(".reminder-text".val);
+    // }
     
     todaysDate(); 
 })
